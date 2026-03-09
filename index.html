@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sivil Anayasa — Bu Senin Anayasan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Instrument+Sans:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --k:#C0392B;--kk:#922B21;--beyaz:#F5F0E8;--siyah:#1A1A1A;--gri:#5D5D5D;--ga:#E8E2D9;--altin:#C9A84C;--kart:#FEFCF8; }
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--beyaz);color:var(--siyah);font-family:'Instrument Sans',sans-serif;overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(192,57,43,.12)}
+  .nl{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;color:var(--k)}.nl span{color:var(--siyah)}
+  .nls{display:flex;gap:26px;align-items:center}
+  .nls a{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--gri);transition:color .2s}.nls a:hover{color:var(--k)}
+  .nb{background:var(--k)!important;color:white!important;padding:8px 18px;border-radius:2px}.nb:hover{background:var(--kk)!important}
+  .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:58px}
+  .hl{padding:76px 52px 76px 68px;display:flex;flex-direction:column;justify-content:center}
+  .ey{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--k);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .ey::before{content:'';width:34px;height:1px;background:var(--k)}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,78px);font-weight:900;line-height:.94;letter-spacing:-2px;margin-bottom:24px}
+  h1 em{color:var(--k);font-style:italic}
+  .hd{font-family:'Crimson Pro',serif;font-size:18px;line-height:1.65;color:var(--gri);max-width:440px;margin-bottom:38px}
+  .manifesto-kutu{border-left:3px solid var(--k);padding:16px 20px;margin:24px 0;background:rgba(192,57,43,.04);display:flex;flex-direction:column;gap:10px}
+  .manifesto-satir{font-family:'Crimson Pro',serif;font-size:16px;color:var(--siyah);line-height:1.5;padding-left:8px;position:relative}
+  .manifesto-satir::before{content:'—';position:absolute;left:-12px;color:var(--k);font-weight:700}
+  .cg{display:flex;gap:12px;flex-wrap:wrap}
+  .ba{background:var(--k);color:white;padding:13px 30px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .25s;border:2px solid var(--k)}
+  .ba:hover{background:var(--kk);border-color:var(--kk);transform:translateY(-2px)}
+  .bi{background:transparent;color:var(--siyah);padding:13px 30px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:2px solid var(--siyah);transition:all .25s}
+  .bi:hover{background:var(--siyah);color:white;transform:translateY(-2px)}
+  .hr{background:var(--siyah);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .hr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(192,57,43,.04) 40px,rgba(192,57,43,.04) 41px)}
+  .hp{position:relative;z-index:2;padding:52px 44px;max-width:430px;width:100%}
+  .pl{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--altin);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,.3)}
+  .mk{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--k);padding:16px 20px;margin-bottom:9px;cursor:pointer;transition:all .2s;border-radius:0 2px 2px 0;animation:fiu .6s ease both}
+  .mk:hover{background:rgba(255,255,255,.08);border-left-color:var(--altin);transform:translateX(4px)}
+  .mk:nth-child(2){animation-delay:.1s}.mk:nth-child(3){animation-delay:.2s}.mk:nth-child(4){animation-delay:.3s}.mk:nth-child(5){animation-delay:.4s}
+  .mn{font-size:10px;font-weight:600;letter-spacing:.15em;color:var(--k);text-transform:uppercase;margin-bottom:4px}
+  .mb2{font-family:'Crimson Pro',serif;font-size:15px;color:rgba(255,255,255,.9);line-height:1.3}
+  .my{margin-top:6px;font-size:11px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:5px}
+  .ys{background:var(--k);color:white;padding:1px 6px;border-radius:10px;font-size:10px;font-weight:700}
+  @keyframes fiu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  .sb{background:var(--siyah);padding:0 80px;display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:180px}
+  .sb-degerler{display:flex;align-items:center;gap:0;border-right:1px solid rgba(255,255,255,.1)}
+  .deger-item{padding:36px 32px;text-align:center;border-right:1px solid rgba(255,255,255,.07);flex:1;position:relative}
+  .deger-item:last-child{border-right:none}
+  .deger-ikon{font-size:22px;margin-bottom:8px}
+  .deger-baslik{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:white;margin-bottom:4px}
+  .deger-acik{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.05em;line-height:1.4}
+  .sb-istatistik{display:grid;grid-template-columns:1fr 1fr;padding:0}
+  .stat-item{padding:36px 32px;border-left:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;justify-content:center}
+  .stat-item:nth-child(1){border-bottom:1px solid rgba(255,255,255,.07)}
+  .stat-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.07)}
+  .sn{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:var(--k);line-height:1}
+  .sl{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:5px}
+  .mb{padding:96px 80px;background:var(--beyaz)}
+  .bu{max-width:1200px;margin:0 auto 44px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .be{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--k);margin-bottom:12px}
+  .ab{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,50px);font-weight:900;line-height:1.05;letter-spacing:-1.5px}
+  .ab .kr{color:var(--k)}
+  .ba2{font-family:'Crimson Pro',serif;font-size:16px;color:var(--gri);line-height:1.6;max-width:360px}
+  .fb-bar{max-width:1200px;margin:0 auto 28px;display:flex;gap:7px;flex-wrap:wrap;position:sticky;top:56px;z-index:50;background:var(--beyaz);padding:12px 0;border-bottom:1px solid var(--ga)}
+  .fb{padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--ga);background:transparent;color:var(--gri);border-radius:2px;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif}
+  .fb:hover,.fb.aktif{background:var(--k);border-color:var(--k);color:white}
+  .grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .kart{background:var(--kart);border:1px solid var(--ga);padding:24px;cursor:pointer;transition:all .22s;border-radius:2px;position:relative;overflow:hidden}
+  .kart::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--k);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .kart:hover{box-shadow:0 5px 28px rgba(0,0,0,.08);transform:translateY(-2px)}.kart:hover::before{transform:scaleX(1)}
+  .kt{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--k);margin-bottom:9px}
+  .kart h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:9px;line-height:1.2}
+  .kart p{font-family:'Crimson Pro',serif;font-size:14px;color:var(--gri);line-height:1.55;margin-bottom:14px}
+  .ka{display:flex;align-items:center;justify-content:space-between;padding-top:11px;border-top:1px solid var(--ga)}
+  .ky{font-size:11px;color:var(--gri);display:flex;align-items:center;gap:5px}
+  .dot{width:5px;height:5px;border-radius:50%;background:#27AE60;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .ko{font-size:15px;color:var(--k);transition:transform .2s}.kart:hover .ko{transform:translateX(4px)}
+  .kisim-sep{grid-column:1/-1;margin-top:28px;padding-top:18px;border-top:2px solid var(--k);display:flex;align-items:center;gap:12px;margin-bottom:-4px}
+  .kisim-sep span:first-child{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--siyah);white-space:nowrap}
+  .kisim-sep span:last-child{flex:1;height:1px;background:var(--ga)}
+  .alinti{padding:86px 80px;background:var(--beyaz);text-align:center;position:relative;overflow:hidden}
+  .alinti::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(192,57,43,.02) 60px,rgba(192,57,43,.02) 61px)}
+  .ai{max-width:740px;margin:0 auto;position:relative;z-index:2}
+  .tir{font-family:'Playfair Display',serif;font-size:90px;color:var(--k);line-height:.5;display:block;margin-bottom:18px;opacity:.35}
+  .am{font-family:'Playfair Display',serif;font-size:clamp(20px,2.8vw,34px);font-weight:700;line-height:1.3;color:var(--siyah);margin-bottom:22px;font-style:italic}
+  .ak{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gri)}
+  .nasil{padding:96px 80px;background:var(--siyah);color:white}
+  .ni{max-width:1200px;margin:0 auto}
+  .ni .ab em{color:var(--altin);font-style:italic}
+  .adimlar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);margin-top:52px;border:1px solid rgba(255,255,255,.1)}
+  .adim{background:var(--siyah);padding:42px 34px;transition:background .3s}.adim:hover{background:rgba(192,57,43,.08)}
+  .an{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;color:rgba(192,57,43,.2);line-height:1;margin-bottom:18px}
+  .adim h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;margin-bottom:9px}
+  .adim p{font-family:'Crimson Pro',serif;font-size:15px;color:rgba(255,255,255,.55);line-height:1.7}
+  .ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(26,26,26,.87);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:14px}
+  .ov.ac{display:flex}
+  .modal{background:var(--kart);max-width:640px;width:100%;border-radius:2px;overflow:hidden;box-shadow:0 28px 90px rgba(0,0,0,.4);animation:mg .3s ease;max-height:92vh;overflow-y:auto}
+  @keyframes mg{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .mh{background:var(--siyah);padding:24px 30px;display:flex;align-items:flex-start;justify-content:space-between}
+  .mno{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--k);margin-bottom:4px}
+  .mbas{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:white}
+  .mx{background:none;border:none;color:rgba(255,255,255,.45);font-size:21px;cursor:pointer;padding:0 0 0 14px;transition:color .2s;line-height:1}.mx:hover{color:white}
+  .mbody{padding:28px}
+  .mmet{background:#FFF8F0;border-left:3px solid var(--altin);padding:13px 17px;margin-bottom:22px;font-family:'Crimson Pro',serif;font-size:15px;line-height:1.65;color:var(--siyah);border-radius:0 2px 2px 0}
+  .mmet strong{color:var(--k)}
+  .mac{background:var(--beyaz);border:1px solid var(--ga);padding:13px 17px;margin-bottom:22px;border-radius:2px;font-size:13px;line-height:1.7;color:var(--gri)}
+  .mac strong{color:var(--siyah);display:block;margin-bottom:3px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+  .fg{margin-bottom:16px}
+  .fl{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--siyah);margin-bottom:6px}
+  .fi,.ft,.fs{width:100%;padding:10px 13px;border:1.5px solid var(--ga);background:white;border-radius:2px;font-family:'Instrument Sans',sans-serif;font-size:14px;color:var(--siyah);transition:border-color .2s;outline:none}
+  .fi:focus,.ft:focus,.fs:focus{border-color:var(--k)}.ft{min-height:105px;resize:vertical;line-height:1.6}.fs{appearance:none;cursor:pointer}
+  .oyg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .ob{flex:1;min-width:100px;padding:10px 13px;border:1.5px solid var(--ga);background:white;border-radius:2px;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:4px}
+  .ob:hover{border-color:var(--siyah)}.ob.s1{background:#E8F8F0;border-color:#27AE60;color:#1E8449}.ob.s2{background:#FEF0EE;border-color:var(--k);color:var(--kk)}.ob.s3{background:#FEF9EC;border-color:var(--altin);color:#7D6608}
+  .gb{width:100%;padding:14px;background:var(--k);color:white;border:none;border-radius:2px;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:all .2s;margin-top:5px}
+  .gb:hover{background:var(--kk);transform:translateY(-1px)}
+  .ik{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .mv{margin-top:22px}.mvb{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gri);margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--ga)}
+  .yi{padding:13px 0;border-bottom:1px solid var(--ga)}
+  .y-aksiyonlar{display:flex;gap:8px;margin-top:10px;align-items:center}
+  .y-btn{padding:5px 12px;font-size:12px;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--gri);border-radius:20px;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif}
+  .y-btn:hover,.y-btn.aktif-begen{border-color:var(--k);color:var(--k);background:rgba(192,57,43,.08)}
+  .yanit-form{margin-top:10px;padding:12px;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid var(--border)}
+  .yanit-input,.yanit-ta{width:100%;padding:7px 10px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--beyaz);border-radius:4px;font-family:'Instrument Sans',sans-serif;font-size:13px;outline:none;margin-bottom:7px;box-sizing:border-box}
+  .yanit-ta{font-family:'Crimson Pro',serif;font-size:14px;resize:vertical;min-height:60px}
+  .alt-yorumlar{margin-top:10px;padding-left:16px;border-left:2px solid var(--border)}
+  .alt-yorum{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}.yim{display:flex;align-items:center;gap:7px;margin-bottom:6px;flex-wrap:wrap}
+  .yav{width:25px;height:25px;border-radius:50%;background:var(--k);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+  .yin{font-size:12px;font-weight:700}.yis{font-size:11px;color:var(--gri)}
+  .badge{font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 6px;border-radius:10px;text-transform:uppercase}
+  .bo{background:#E8F8F0;color:#1E8449}.bom{background:#FEF0EE;color:var(--kk)}.bt{background:#FEF9EC;color:#7D6608}
+  .yit{font-family:'Crimson Pro',serif;font-size:14px;line-height:1.6;color:var(--siyah);margin-left:32px}
+  .bildirim{position:fixed;bottom:26px;right:26px;z-index:300;background:var(--siyah);color:white;padding:13px 20px;border-radius:2px;border-left:4px solid #27AE60;font-size:13px;font-weight:600;box-shadow:0 5px 22px rgba(0,0,0,.3);transform:translateX(130%);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+  .bildirim.goster{transform:translateX(0)}
+  footer{background:#111;color:rgba(255,255,255,.55);padding:52px 80px 32px}
+  .fi2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:36px}
+  .flo{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:white;margin-bottom:11px}.flo span{color:var(--k)}
+  .fac{font-family:'Crimson Pro',serif;font-size:14px;line-height:1.7;color:rgba(255,255,255,.4)}
+  .fk h4{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:white;margin-bottom:12px}
+  .fk a{display:block;font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:8px;transition:color .2s}.fk a:hover{color:white}
+  .falt{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;text-align:center;font-size:12px;color:rgba(255,255,255,.22)}.falt a{color:var(--k);text-decoration:none}
+  @media(max-width:900px){nav{padding:13px 18px}.nls{display:none}.hero{grid-template-columns:1fr}.hr{min-height:48vh}.hl{padding:40px 18px}.sb{grid-template-columns:1fr}.sb-degerler{grid-template-columns:repeat(2,1fr);border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}.sb-istatistik{grid-template-columns:repeat(2,1fr)}.deger-item{padding:20px 16px}.stat-item{padding:20px 16px}.mb{padding:64px 18px}.grid{grid-template-columns:1fr}.nasil{padding:64px 18px}.adimlar{grid-template-columns:1fr}.alinti{padding:64px 18px}.bu{flex-direction:column;align-items:flex-start}.ik{grid-template-columns:1fr}footer{padding:36px 18px 24px}.fi2{grid-template-columns:1fr;gap:24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nl">sivil<span>anayasa</span>.com</div>
+  <div class="nls">
+    <a href="#maddeler">95 Madde</a>
+    <a href="#nasil">Nasıl Çalışır?</a>
+    <a href="#maddeler" class="nb">Görüşünü Yaz</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hl">
+    <div class="ey">Türkiye'nin Anayasa Tartışması</div>
+    <h1>Bu Senin<br><em>Anayasan.</em></h1>
+    <p class="hd">Anayasa sadece siyasetçilerin değil, <strong>halkın sözleşmesidir.</strong> Türkiye'de bugüne kadar yapılan anayasaların hiçbiri tam anlamıyla halkın doğrudan katılımıyla hazırlanmış bir sivil anayasa olmadı. Bugün yeni bir anayasa konuşulurken önemli bir soru ortaya çıkıyor: <em>Bu anayasa gerçekten halkın anayasası olacak mı?</em></p>
+    <div class="manifesto-kutu">
+      <div class="manifesto-satir">Halk tarafından hazırlanan bir anayasa hiçbir vesayeti kabul etmez.</div>
+      <div class="manifesto-satir">Ne askeri, ne yargı, ne de siyasi çıkar vesayetine izin verir.</div>
+      <div class="manifesto-satir">Oyunun kurallarını en iyi bilenler, o kurallar altında yaşayacak vatandaşlardır.</div>
+    </div>
+    <p class="hd" style="font-size:16px;margin-bottom:28px">Biraz beyin jimnastiği yapın. Düşünün. Fikrinizi paylaşın. Çünkü <strong>bu anayasa sizin anayasanız olabilir.</strong></p>
+    <div class="cg">
+      <a href="#maddeler" class="ba">Katılın. Düşünün. Yazın →</a>
+      <a href="#nasil" class="bi">Nasıl Çalışır?</a>
+    </div>
+  </div>
+  <div class="hr">
+    <div class="hp">
+      <div class="pl">📜 Öne Çıkan Maddeler</div>
+      <div class="mk" onclick="modalAc('m14')"><div class="mn">Madde 14</div><div class="mb2">Eşitlik ve Ayrımcılık Yasağı</div><div class="my"><span class="ys">112</span> yorum</div></div>
+      <div class="mk" onclick="modalAc('m19')"><div class="mn">Madde 19</div><div class="mb2">İfade ve Basın Özgürlüğü</div><div class="my"><span class="ys">83</span> yorum</div></div>
+      <div class="mk" onclick="modalAc('m28')"><div class="mn">Madde 28</div><div class="mb2">Çevre Hakkı — %20 Koruma Alanı</div><div class="my"><span class="ys">61</span> yorum</div></div>
+      <div class="mk" onclick="modalAc('m43')"><div class="mn">Madde 43</div><div class="mb2">Cumhurbaşkanı — Meclis Seçimi</div><div class="my"><span class="ys">94</span> yorum</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sb">
+  <div class="sb-degerler">
+    <div class="deger-item">
+      <div class="deger-ikon">🕊️</div>
+      <div class="deger-baslik">Özgürlükçü</div>
+      <div class="deger-acik">Her bireyin temel haklarını güvence altına alır</div>
+    </div>
+    <div class="deger-item">
+      <div class="deger-ikon">🤝</div>
+      <div class="deger-baslik">Kapsayıcı</div>
+      <div class="deger-acik">81 il, tüm kimlikler, tek bir yurttaşlık</div>
+    </div>
+    <div class="deger-item">
+      <div class="deger-ikon">⚖️</div>
+      <div class="deger-baslik">Eşitlikçi</div>
+      <div class="deger-acik">Kanun önünde herkes eşit, ayrıcalık yok</div>
+    </div>
+    <div class="deger-item">
+      <div class="deger-ikon">🏛️</div>
+      <div class="deger-baslik">Bağımsız</div>
+      <div class="deger-acik">Yargı, medya ve kurumlar her türlü vesayetten özgür</div>
+    </div>
+  </div>
+  <div class="sb-istatistik">
+    <div class="stat-item"><div class="sn" id="s1">0</div><div class="sl">Katılımcı Yurttaş</div></div>
+    <div class="stat-item"><div class="sn" id="s2">0</div><div class="sl">Paylaşılan Görüş</div></div>
+    <div class="stat-item"><div class="sn" id="s3">0</div><div class="sl">Anayasa Maddesi</div></div>
+    <div class="stat-item"><div class="sn" id="s4">0</div><div class="sl">Temsil Edilen İl</div></div>
+  </div>
+</div>
+
+<section class="mb" id="maddeler">
+  <div class="bu">
+    <div><div class="be">Sivil Anayasa Taslağı</div><h2 class="ab">Tüm <span class="kr">95 Madde</span></h2></div>
+    <p class="ba2">Bir maddeye tıkla, sade açıklamayı oku, oyunu kullan ve istersen birkaç cümle yaz. Hukuk bilmene gerek yok.</p>
+  </div>
+  <div class="fb-bar">
+    <button class="fb aktif" onclick="filtrele('',this)">Tümü (95)</button>
+    <button class="fb" onclick="filtrele('genel',this)">Genel Esaslar</button>
+    <button class="fb" onclick="filtrele('haklar',this)">Temel Haklar</button>
+    <button class="fb" onclick="filtrele('yasama',this)">Yasama</button>
+    <button class="fb" onclick="filtrele('yurutme',this)">Yürütme</button>
+    <button class="fb" onclick="filtrele('yargi',this)">Yargı</button>
+    <button class="fb" onclick="filtrele('denetim',this)">Denetim Kurumları</button>
+    <button class="fb" onclick="filtrele('parti',this)">Siyasi Partiler</button>
+    <button class="fb" onclick="filtrele('yerel',this)">Yerel Yönetim</button>
+    <button class="fb" onclick="filtrele('ekonomi',this)">Ekonomi</button>
+    <button class="fb" onclick="filtrele('diger',this)">Diğer</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="alinti">
+  <div class="ai">
+    <span class="tir">"</span>
+    <p class="am">Egemenlik, kayıtsız şartsız milletindir. Hiçbir kimse veya organ, Anayasa'dan kaynaklanmayan bir yetkiyi kullanamaz.</p>
+    <div class="ak">— Sivil Anayasa Taslağı, Madde 5</div>
+  </div>
+</section>
+
+<section class="nasil" id="nasil">
+  <div class="ni">
+    <div class="be" style="color:var(--altin)">Platform Rehberi</div>
+    <h2 class="ab">Nasıl <em>Çalışır?</em></h2>
+    <div class="adimlar">
+      <div class="adim"><div class="an">01</div><h3>Maddeyi Oku</h3><p>Her maddenin yanında sade Türkçeyle yazılmış bir açıklama var. "Bu ne anlama geliyor, hayatıma nasıl dokunuyor?" sorularına birlikte yanıt arıyoruz.</p></div>
+      <div class="adim"><div class="an">02</div><h3>Görüşünü Seç</h3><p>Katılıyor musun, katılmıyor musun, yoksa kararsız mısın? Oyunu kullan. Sonra dilersen birkaç cümleyle neden öyle düşündüğünü anlat.</p></div>
+      <div class="adim"><div class="an">03</div><h3>Başkalarını Dinle</h3><p>İstanbul'dan, Diyarbakır'dan, Trabzon'dan sesler. Anayasa tartışması tek bir doğrudan oluşmaz — farklı deneyimler farklı bakış açıları getirir.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fi2">
+    <div><div class="flo">sivil<span>anayasa</span>.com</div><p class="fac">Bu platform; anayasa tartışmasını uzman salonlarından çıkarıp sokaklara, evlere, her yurttaşın masasına taşımak için kurulmuştur.</p></div>
+    <div class="fk"><h4>Platform</h4><a href="#">Tüm 95 Madde</a><a href="#">Son Yorumlar</a><a href="#">İstatistikler</a></div>
+    <div class="fk"><h4>Hakkında</h4><a href="#">Bu Proje Nedir?</a><a href="#">Gizlilik</a><a href="#">İletişim</a></div>
+  </div>
+  <div class="falt">© 2025 sivilanayasa.com — Egemenlik milletindir &nbsp;·&nbsp; <a href="#">Açık Kaynak</a></div>
+</footer>
+
+<div class="ov" id="ov" onclick="ovK(event)">
+  <div class="modal">
+    <div class="mh"><div><div class="mno" id="m-no"></div><div class="mbas" id="m-bas"></div></div><button class="mx" onclick="ovK()">✕</button></div>
+    <div class="mbody">
+      <div class="mmet" id="m-met"></div>
+      <div class="mac" id="m-ac"></div>
+      <div class="fg"><label class="fl">Bu maddeye katılıyor musun?</label>
+        <div class="oyg">
+          <button class="ob" id="oy-ol" onclick="oyVer('ol')">✓ Katılıyorum</button>
+          <button class="ob" id="oy-olm" onclick="oyVer('olm')">✗ Katılmıyorum</button>
+          <button class="ob" id="oy-tar" onclick="oyVer('tar')">◎ Kararsızım</button>
+        </div>
+      </div>
+      <div class="fg"><label class="fl">Neden? (İsteğe bağlı)</label><textarea class="ft" id="y-met" placeholder="Bu maddeyle ilgili ne düşünüyorsun? Kısa da uzun da olur."></textarea></div>
+      <div class="ik">
+        <div class="fg" style="margin:0"><label class="fl">Adın / Takma Ad</label><input class="fi" type="text" id="y-isim" placeholder="Ör: Ayşe K."></div>
+        <div class="fg" style="margin:0"><label class="fl">Şehrin</label>
+          <select class="fs" id="y-sehir">
+            <option value="">Seç...</option>
+            <option>İstanbul</option><option>Ankara</option><option>İzmir</option><option>Bursa</option><option>Antalya</option><option>Adana</option><option>Konya</option><option>Gaziantep</option><option>Diyarbakır</option><option>Trabzon</option><option>Samsun</option><option>Kayseri</option><option>Erzurum</option><option>Van</option><option>Mersin</option><option>Eskişehir</option><option>Malatya</option><option>Şanlıurfa</option><option>Yurt Dışı</option><option>Diğer</option>
+          </select>
+        </div>
+      </div>
+      <button class="gb" onclick="gonder()">Görüşümü Paylaş →</button>
+      <div class="mv"><div class="mvb">Bu Maddeye Gelen Yorumlar</div><div id="y-liste"></div></div>
+    </div>
+  </div>
+</div>
+<div class="bildirim" id="bil">✓ Görüşün kaydedildi, teşekkürler!</div>
+
+<script>
+const M={
+  m1:{no:'Madde 1',b:'Devletin Şekli',k:'genel',m:'Türkiye Devleti bir <strong>Cumhuriyettir</strong>. Cumhuriyet, halkın serbest iradesiyle seçtiği temsilciler aracılığıyla yönetilir. Hiçbir kişi veya kurum bu ilkeyi ortadan kaldırmaya yönelik faaliyette bulunamaz.',a:'Devletin cumhuriyet olduğunu ve cumhuriyetin nasıl işlediğini tanımlıyor. Hiçbir kişi ya da kurumun bunu ortadan kaldırmaya yönelik faaliyette bulunamayacağı güvence altına alınıyor.',y:[]},
+  m2:{no:'Madde 2',b:'Cumhuriyetin Nitelikleri',k:'genel',m:'Türkiye Cumhuriyeti; <strong>insan onuruna dayalı</strong>, insan haklarına saygılı, demokratik, laik ve sosyal bir <strong>hukuk devletidir</strong>. Devlet, eşitlik ve çoğulculuk ilkeleriyle yönetilir.',a:'Türkiye\'nin nasıl bir devlet olduğunu özetleyen madde. Laik, demokratik, sosyal ve hukuk devleti nitelikleri her dönem tartışılmıştır. Bu taslakta "insan onuru" da ekleniyor.',y:[]},
+  m3:{no:'Madde 3',b:'Devletin Bütünlüğü, Resmî Dil, Başkent',k:'genel',m:'Türkiye Devleti bölünmez bir bütündür. Resmî dili Türkçedir; <strong>vatandaşların farklı anadillerini öğrenme ve kullanma hakkı güvence altındadır.</strong> Başkent Ankara\'dır.',a:'Devletin bütünlüğünü korurken anadil haklarını da güvenceye alıyor. Türkçe resmi dil olmaya devam ediyor ama farklı dillerin öğrenilmesi ve kullanılması yasal güvence altına giriyor.',y:[]},
+  m4:{no:'Madde 4',b:'Değiştirilemez Hükümler',k:'genel',m:'Bu Anayasa\'nın ilk üç maddesi <strong>değiştirilemez</strong>. Bu maddelerin değiştirilmesi teklif dahi edilemez ve her türlü girişim Anayasaya aykırıdır.',a:'"Sonsuzluk klozu" — 1., 2. ve 3. maddeler hiçbir siyasi çoğunluk tarafından değiştirilemez. Almanya, Hindistan ve Brezilya anayasalarında da benzer düzenlemeler var.',y:[]},
+  m5:{no:'Madde 5',b:'Egemenlik',k:'genel',m:'<strong>Egemenlik, kayıtsız şartsız milletindir.</strong> Hiçbir kimse veya organ, Anayasa\'dan kaynaklanmayan bir yetkiyi kullanamaz ve bu tür yetki kullanımları batıldır.',a:'Devleti kimin yönettiğine dair en temel ilke. Tüm devlet yetkisinin kaynağı halk. Anayasa\'dan gelmeyen hiçbir yetki geçerli değil.',y:[]},
+  m6:{no:'Madde 6',b:'Devletin Amaç ve Görevleri',k:'genel',m:'Devletin temel amaçları: insan onurunu güvence altına almak, insan haklarını korumak, toplumsal barışı sağlamak, <strong>vatandaşların refahını artırmak</strong> ve çevreyi korumak.',a:'Devletin ne için var olduğunu açıklıyor. Sadece güvenlik değil — insan onuru, refah, çevre ve barış da devletin anayasal görevleri arasında sayılıyor.',y:[]},
+  m7:{no:'Madde 7',b:'Hakların Niteliği',k:'haklar',m:'Temel hak ve özgürlükler <strong>devredilemez, vazgeçilemez</strong> ve insan onuruna dayanır. Herkes bu haklara sahiptir ve bu haklar dokunulmazdır.',a:'Hakların özünü tanımlıyor. Kimse sana "şu hakkından vazgeç" diyemez. Devlet de dahil hiçbir güç bu hakları elinden alamaz.',y:[]},
+  m8:{no:'Madde 8',b:'Hakların Sınırlandırılması ve Çekirdek Haklar',k:'haklar',m:'Haklar yalnızca kamu güvenliği, kamu sağlığı veya başkalarının haklarının korunması amacıyla sınırlanabilir. <strong>Çekirdek haklar (yaşam hakkı, işkence yasağı, düşünce ve ifade özgürlüğü) hiçbir halde sınırlanamaz.</strong>',a:'"Çekirdek haklar" kavramı — bunlar savaşta bile, olağanüstü halde bile dokunulamaz. Sınırlamalar ölçülü ve orantılı olmak zorunda.',y:[]},
+  m9:{no:'Madde 9',b:'Hakların Kötüye Kullanılması Yasağı',k:'haklar',m:'Hiçbir hüküm, Anayasa\'da tanınan hak ve özgürlükleri ortadan kaldırmak amacıyla yorumlanamaz veya kullanılamaz.',a:'Haklar silah olarak kullanılamaz. "İfade özgürlüğüm var" diyerek başkasının haklarını yok etmeye çalışmak bu maddeyle yasaklanıyor.',y:[]},
+  m10:{no:'Madde 10',b:'Yaşam Hakkı ve Ölüm Cezası Yasağı',k:'haklar',m:'Herkes, yaşama hakkına sahiptir. <strong>Ölüm cezası yasaktır ve hiçbir koşulda ihdas edilemez.</strong>',a:'Ölüm cezası savaşta bile geri getirilemeyecek. Bu "mutlak yasak" olarak anayasaya giriyor. Almanya, Fransa ve tüm AB ülkelerinde de benzer hüküm var.',y:[{i:'Ömer G.',s:'Gaziantep',o:'olm',t:'Bazı suçlar için istisnai de olsa ölüm cezası olmalı.'},{i:'Lale M.',s:'İstanbul',o:'ol',t:'Devletin insan öldürme hakkı olmamalı. Adalet sistemimizin hataları da göz önünde tutulmalı.'}]},
+  m11:{no:'Madde 11',b:'Kişi Dokunulmazlığı — İşkence Yasağı',k:'haklar',m:'Hiç kimse işkenceye, eziyete veya <strong>insanlık dışı muameleye</strong> tabi tutulamaz. Tıbbi müdahaleler kişinin özgür ve aydınlatılmış rızası olmadan yapılamaz.',a:'İşkence mutlak yasak. Tıbbi rıza ilkesi de burada: doktor seni zorla tedavi edemez.',y:[]},
+  m12:{no:'Madde 12',b:'Güvenlik Hakkı ve Özgürlük',k:'haklar',m:'Herkesin kişi güvenliği ve özgürlüğü hakkı vardır. Yakalanan veya tutuklanan kişinin <strong>makul sürede yargı önüne çıkarılma</strong> hakkı vardır.',a:'Keyfi gözaltı yasak. Tutuklandıysan hakim karşısına çıkarılmak zorundasın. "Habeas corpus" ilkesinin anayasal güvencesi.',y:[]},
+  m13:{no:'Madde 13',b:'Kanunsuz Suç ve Ceza Olmaz',k:'haklar',m:'Kimse, işlendiği zaman kanunun <strong>suç saymadığı</strong> bir fiilden cezalandırılamaz. Suç ve cezalar geçmişe yürütülemez.',a:'Geriye dönük yasa çıkarıp birini cezalandıramazsın. Hukukun temel ilkesi.',y:[]},
+  m14:{no:'Madde 14',b:'Eşitlik ve Ayrımcılık Yasağı',k:'haklar',m:'Herkes kanun önünde eşittir. Hiç kimseye; cinsiyet, cinsel yönelim, etnik köken, ırk, dil, din, yaş, engellilik, <strong>cinsel kimlik</strong> veya başka herhangi bir durum temelinde ayrımcılık yapılamaz.',a:'Kim olursan ol — devlet seni eşit tutmak zorunda. Cinsel kimlik gibi kategorilerin anayasaya girmesi yeni ve önemli. Pozitif ayrımcılık tedbirlerine de kapı açılıyor.',y:[{i:'Melis A.',s:'İstanbul',o:'ol',t:'Cinsel kimlik gibi kategorilerin Anayasa\'ya girmesi çok önemli.'},{i:'Kadir T.',s:'Konya',o:'tar',t:'Teoride güzel ama uygulamada nasıl denetlenecek?'},{i:'Ece Y.',s:'Ankara',o:'ol',t:'Pozitif ayrımcılık hükmü çok yerinde.'}]},
+  m15:{no:'Madde 15',b:'Din ve Vicdan Özgürlüğü',k:'haklar',m:'Herkes düşünce, vicdan ve din özgürlüğüne sahiptir. Kimse ibadete zorlanamaz veya zorlanarak engellenemez. <strong>İnançsızlık da bu kapsamda korunur.</strong>',a:'İnanmak ya da inanmamak serbest. Devlet tüm inanç gruplarına eşit mesafede durmak zorunda. İnançsızlığın da koruma altında olması önemli bir tercih.',y:[]},
+  m16:{no:'Madde 16',b:'Özel Hayat ve Kişisel Verilerin Korunması',k:'haklar',m:'Herkesin özel hayatına saygı gösterilmesini isteme hakkı vardır. Kişisel veriler <strong>bağımsız KVKK Otoritesi</strong> tarafından denetlenir.',a:'Sosyal medya şirketleri, devlet kurumları — hepsi senin verilerini keyfi işleyemez. Bağımsız bir otorite bu denetimi yapacak. AB\'nin GDPR\'ına benzer yapı.',y:[]},
+  m17:{no:'Madde 17',b:'Yerleşme ve Seyahat Özgürlüğü',k:'haklar',m:'Herkes, yerleşme ve seyahat özgürlüğüne sahiptir. Bu özgürlükler kanunla belirlenen sınırlamalar dışında engellenemez.',a:'İstediğin yerde yaşamak, istediğin yere gitmek anayasal hak. Pasaport iptali veya şehre girişi yasaklamak bu maddeyi ihlal eder.',y:[]},
+  m18:{no:'Madde 18',b:'Mülkiyet Hakkı',k:'haklar',m:'Herkes mülkiyet hakkına sahiptir. Kamulaştırma, kamu yararı amacıyla ve <strong>gerçek karşılığı peşin ödenmek</strong> suretiyle yapılır.',a:'Devlet mülkünü alabilir ama piyasa değerinde peşin ödemek zorunda. Eksik ya da gecikmeli ödeme bu maddeye aykırı.',y:[]},
+  m19:{no:'Madde 19',b:'İfade ve Basın Özgürlüğü',k:'haklar',m:'Herkes düşüncelerini açıklama hürriyetine sahiptir. Basın hürdür ve <strong>sansür edilemez</strong>. İnternet erişimi temel bir hak olarak güvence altına alınır.',a:'Gazeteciler, sosyal medya kullanıcıları, sanatçılar — hepsi bu maddenin koruması altında. İnternet erişiminin anayasal hak sayılması dünyada yeni bir eğilim.',y:[{i:'Fatih E.',s:'İzmir',o:'ol',t:'İnternet erişiminin anayasal hak sayılması çok doğru.'},{i:'Serpil K.',s:'Trabzon',o:'olm',t:'"İstisnai haller" ifadesi muğlak. Kim karar verecek?'}]},
+  m20:{no:'Madde 20',b:'Bilim ve Sanat Özgürlüğü',k:'haklar',m:'Herkes, bilim ve sanatı serbestçe öğrenme, öğretme ve her türlü araştırma yapma hakkına sahiptir. <strong>Bu özgürlükler güvence altındadır.</strong>',a:'Araştırmacılar ve sanatçılar bulgularını serbestçe paylaşabilir. Üniversite özerkliği bu maddeyle de bağlantılı.',y:[]},
+  m21:{no:'Madde 21',b:'Toplantı ve Gösteri Yürüyüşü Hakkı',k:'haklar',m:'Herkes, <strong>önceden izin almaksızın</strong> silahsız toplantı ve gösteri yürüyüşü düzenleme hakkına sahiptir.',a:'Miting ve gösteri için izin almak zorunda değilsin — sadece bildirim yeterli. Mevcut uygulamayla kıyaslandığında önemli bir değişiklik.',y:[]},
+  m22:{no:'Madde 22',b:'Dernek Kurma ve Sendika Hakkı',k:'haklar',m:'Herkes, önceden izin almaksızın dernek kurma hakkına sahiptir. Sendika kurma ve üyelik hakları güvence altındadır. <strong>Hiç kimse üye olmaya zorlanamaz.</strong>',a:'Sivil toplumu güçlendiren madde. Dernek ya da sendika kurmak için devlet iznine gerek yok. Hem üye olmak hem ayrılmak serbest.',y:[]},
+  m23:{no:'Madde 23',b:'Eğitim Hakkı',k:'haklar',m:'Herkes eğitim hakkına sahiptir. İlköğretim zorunlu ve <strong>devlet okullarında ücretsizdir</strong>. Üniversiteler bilimsel ve pedagojik özerkliğe sahiptir.',a:'Ücretsiz eğitim anayasal güvence altında. Üniversiteler siyasi baskıdan bağımsız çalışmak zorunda.',y:[]},
+  m24:{no:'Madde 24',b:'Kamu Denetçiliği (Ombudsmanlık)',k:'haklar',m:'Herkes idare karşısında haklarını aramak için <strong>bağımsız Kamu Denetçiliği Kurumu\'na ücretsiz başvurma</strong> hakkına sahiptir.',a:'Devletle sorunun mu var? Bağımsız ombudsmana ücretsiz başvurabilirsin. Devlet gerekçeli yanıt vermek zorundadır.',y:[]},
+  m25:{no:'Madde 25',b:'Sağlık Hakkı',k:'haklar',m:'Herkes sağlıklı bir çevrede yaşama hakkına sahiptir. Devlet sağlık hizmetlerini <strong>ulaşılabilir ve ücretsiz kılmakla yükümlüdür</strong>.',a:'Ücretsiz sağlık hizmeti anayasal güvence altına giriyor. Hem kamu hem özel sağlık kuruluşları denetime tabi olacak.',y:[]},
+  m26:{no:'Madde 26',b:'Çalışma Hakkı ve Sendikal Haklar',k:'haklar',m:'Herkes adil koşullarda çalışma hakkına sahiptir; <strong>angarya yasaktır</strong>. Grev hakkı, toplu sözleşme hakkı ve sendika üyeliği güvence altındadır.',a:'Angarya (karşılıksız çalışmaya zorlanma) yasaklı. Grev hakkı güvence altında. İşçilerin en temel korumaları anayasada.',y:[]},
+  m27:{no:'Madde 27',b:'Barınma ve Sosyal Güvenlik',k:'haklar',m:'Herkes insan onuruna uygun <strong>barınma hakkına</strong> sahiptir. Devlet dar gelirliler için barınma olanaklarını artırır. Sosyal güvenlik hakkı güvence altındadır.',a:'Barınma hakkı anayasal güvence altına giriyor. Emeklilik ve işsizlik sigortası hakları da koruluyor.',y:[]},
+  m28:{no:'Madde 28',b:'Çevre Hakkı — %20 Doğal Koruma Zorunluluğu',k:'haklar',m:'Ülkenin toplam yüzölçümünün <strong>en az %20\'si</strong> doğal koruma alanı olarak belirlenir. Bu oran asla azaltılamaz ve <strong>azaltılması teklif dahi edilemez.</strong>',a:'Türkiye\'nin şu an %9-10\'u korunuyor. Bu madde %20\'ye çıkmayı şart koşuyor ve hiçbir hükümet bu oranı düşüremiyor. Ormanlar, sulak alanlar kapsam içinde.',y:[{i:'Deniz S.',s:'Antalya',o:'ol',t:'Yanan ormanların üstüne yapılaşma yasağı da var. Başlangıç için iyi.'},{i:'Hüseyin A.',s:'Erzurum',o:'tar',t:'Köylüler açısından değerlendirilmedi. Kendi arazisinde ne yapacak?'}]},
+  m29:{no:'Madde 29',b:'Hayvan Hakları',k:'haklar',m:'Hayvanlar, <strong>hissedebilen canlılar</strong> olarak tanınır ve hakları kanunla güvence altına alınır. Hayvanlara yönelik işkence mutlak olarak yasaktır.',a:'Almanya 2002\'de hayvanları anayasal korumaya aldı. Bu taslak da aynı yolda. Hayvanların "hissedebilen canlı" olarak tanınması hukuki açıdan önemli.',y:[{i:'Gizem T.',s:'Samsun',o:'ol',t:'Almanya\'da var, biz neden olmasın?'},{i:'Ahmet K.',s:'Van',o:'tar',t:'İnsan haklarını tam uygulayamayan bir ülkede öncelik meselesi var.'}]},
+  m30:{no:'Madde 30',b:'Yasama Yetkisi',k:'yasama',m:'Yasama yetkisi, Türk Milleti adına <strong>Türkiye Büyük Millet Meclisi\'ne</strong> aittir. Bu yetki devredilemez ve hiçbir organ veya kişiye bırakılamaz.',a:'Kanun yapma yetkisi TBMM\'ye ait. Cumhurbaşkanı dahil hiçbir kurum bu yetkiyi devralamaz.',y:[]},
+  m31:{no:'Madde 31',b:'TBMM — 500 Milletvekili',k:'yasama',m:'TBMM, <strong>500 milletvekilinden</strong> oluşur. Seçimler genel, eşit, gizli oy esasına göre Bağımsız Seçim Kurulu gözetiminde yapılır.',a:'Mevcut 600\'den 500\'e düşürülüyor. Bağımsız Seçim Kurulu seçimleri denetleyecek.',y:[]},
+  m32:{no:'Madde 32',b:'Seçim Barajı En Fazla %3',k:'yasama',m:'Seçim barajı, temsilde adaleti engellemeyecek şekilde, <strong>%3\'ü geçemez</strong>. Bu sınır aşılamaz.',a:'Şu an fiilen %7 olan baraj anayasayla en fazla %3\'e sabitleniyor. Daha küçük partiler Meclis\'e girebilecek — bu daha adil temsil mi, daha fazla parçalanma mı?',y:[{i:'Zeynep A.',s:'Diyarbakır',o:'ol',t:'Kürtler, Aleviler, azınlıklar yıllarca yüksek baraj yüzünden temsil edilemedi.'}]},
+  m33:{no:'Madde 33',b:'Milletvekili Seçilme Şartları ve Dönem Sınırı',k:'yasama',m:'Milletvekili olabilmek için 21-60 yaş arası olmak ve en az üniversite mezunu olmak gerekir. Milletvekili <strong>en fazla 5 dönem</strong> görev yapabilir.',a:'60 yaş üst sınırı uluslararası ayrımcılık standartlarıyla çelişiyor. 5 dönem sınırı ise liderliğin tekelleşmesini engellemek için.',y:[]},
+  m34:{no:'Madde 34',b:'Milletvekili Dokunulmazlığı',k:'yasama',m:'Milletvekilleri, <strong>yasama faaliyetleri kapsamındaki</strong> oy ve sözlerinden sorumlu tutulamaz. Dokunulmazlık Meclis kararıyla kaldırılabilir.',a:'Dokunulmazlık korunuyor ama kapsamı daraltılıyor: sadece yasama faaliyetleri için geçerli.',y:[]},
+  m35:{no:'Madde 35',b:'Milletvekili Yemin Töreni',k:'yasama',m:'Milletvekilleri, göreve başlarken Anayasa\'ya, hukukun üstünlüğüne ve <strong>milletin egemenliğine</strong> bağlı kalacaklarına dair yemin ederler.',a:'Partiye değil, anayasaya ve millete bağlılık yemini. Yemin içeriği seçilmiş temsilcinin neden var olduğunu hatırlatıyor.',y:[]},
+  m36:{no:'Madde 36',b:'Meclis Başkanı ve Divan',k:'yasama',m:'Meclis Başkanı, seçilmesiyle birlikte <strong>partisiyle ilişiği kesilir</strong> ve tarafsız olarak görevini yapar.',a:'Meclis başkanının tarafsız olması zorunlu ve anayasal güvence altına alınıyor.',y:[]},
+  m37:{no:'Madde 37',b:'Meclis İçtüzüğü',k:'yasama',m:'TBMM çalışmalarını kendi İçtüzüğüne göre yürütür. İçtüzük, siyasi partilere eşit temsil sağlamalı ve <strong>çoğunluğun azınlık haklarını kısıtlamasını engellemelidir.</strong>',a:'Meclis kendi kurallarını yapma özgürlüğüne sahip ama azınlık haklarını ezemez.',y:[]},
+  m38:{no:'Madde 38',b:'Kanun Teklifi ve 10 Günlük Kamu İstişaresi',k:'yasama',m:'Her kanun teklifi <strong>en az 10 gün</strong> kamu istişaresine açılır. Sivil toplum ve vatandaşlar yazılı görüş bildirebilir.',a:'Kanunlar artık halka sorulmadan çıkarılamaz. 10 günlük zorunlu istişare süreci.',y:[]},
+  m39:{no:'Madde 39',b:'Uluslararası Anlaşmalar',k:'yasama',m:'Uluslararası anlaşmaların onaylanması yetkisi TBMM\'ye aittir. Onaylanan anlaşmalar <strong>kanun hükmündedir</strong>.',a:'Uluslararası anlaşmalar Meclis denetiminde. AB hukuku ve insan hakları sözleşmeleri bu madde kapsamında.',y:[]},
+  m40:{no:'Madde 40',b:'Meclis Denetimi',k:'yasama',m:'TBMM, hükümeti soru, genel görüşme, meclis araştırması ve soruşturması yollarıyla denetler. <strong>Bu denetim yetkisi kısıtlanamaz.</strong>',a:'Meclis\'in hükümeti sorgulama araçları. Soru önergesi, gensoru — bunlar yasama denetiminin somut araçları.',y:[]},
+  m41:{no:'Madde 41',b:'Bütçe Kanunu',k:'yasama',m:'Bütçe teklifi hükümet tarafından hazırlanır ve mali yılbaşından önce TBMM\'ye sunulur. Bütçe görüşmeleri <strong>kamuoyuna açık</strong> yapılır.',a:'Kim ne kadar harcar — Meclis karar verir. Bütçe görüşmelerinin şeffaf olması hesap verebilirliğin temelidir.',y:[]},
+  m42:{no:'Madde 42',b:'Yürütme Yetkisi',k:'yurutme',m:'Yürütme yetkisi, <strong>Başbakan ve Bakanlar Kurulu</strong> tarafından Anayasa ve kanunlara uygun olarak kullanılır.',a:'Bu madde güçlü cumhurbaşkanlığı sisteminden parlamenter sisteme geçişi simgeliyor. Yürütme gücü Başbakan\'da.',y:[]},
+  m43:{no:'Madde 43',b:'Cumhurbaşkanı — Meclis Seçimi',k:'yurutme',m:'Cumhurbaşkanı TBMM tarafından <strong>üye tam sayısının 2/3 çoğunluğuyla</strong> seçilir. Tarafsız olup siyasi faaliyette bulunamaz. Görev süresi <strong>5 yıl, en fazla 2 dönem.</strong>',a:'Halk cumhurbaşkanını artık seçmiyor — Meclis seçiyor. 2/3 şartı uzlaşıyı zorunlu kılıyor. Cumhurbaşkanı tarafsız ve sembolik bir devlet başkanı.',y:[{i:'Burcu Y.',s:'Ankara',o:'ol',t:'Uzlaşı kültürü bu ülkede inşa edilmeli.'},{i:'Murat D.',s:'Bursa',o:'olm',t:'Halkın doğrudan oyuyla seçilmemesi meşruiyet sorunu yaratır.'}]},
+  m44:{no:'Madde 44',b:'Başbakan ve Bakanlar Kurulu',k:'yurutme',m:'Başbakan Cumhurbaşkanı tarafından atanır ve <strong>TBMM güvenoyuyla</strong> göreve başlar. Hükümet TBMM\'ye karşı sorumludur.',a:'Güvenoyu zorunlu — Meclis güvenmediği hükümeti gensoru ile düşürebilir. Bu parlamenter sistemin özü.',y:[]},
+  m45:{no:'Madde 45',b:'Millî Güvenlik Kurulu (MGK)',k:'yurutme',m:'MGK\'da <strong>sivil üyeler askerlerden fazla</strong> olmalıdır. MGK\'nın kararları tavsiye niteliğinde olup <strong>bağlayıcı değildir.</strong>',a:'Tarihi açıdan kritik madde. MGK artık hükümete emir veremez — sadece tavsiye sunabilir. Sivil üstünlük anayasal güvence altında.',y:[]},
+  m46:{no:'Madde 46',b:'Olağanüstü Hal',k:'yurutme',m:'Olağanüstü hal en fazla <strong>6 ay</strong> ilan edilebilir. Meclis onayı zorunludur. <strong>Çekirdek haklara dokunulamaz.</strong>',a:'OHAL\'in sınırları net çiziliyor. 6 ay üst sınır, Meclis isterse kaldırabilir. İşkence yasağı ve düşünce özgürlüğü OHAL\'de bile dokunulamaz.',y:[]},
+  m47:{no:'Madde 47',b:'Seferberlik ve Savaş Hali',k:'yurutme',m:'Savaş hali veya seferberlik ilanı <strong>TBMM kararıyla</strong> yapılır. Savaşta da insan onurunun korunması esastır.',a:'Savaşa girmek kararı Meclis\'e ait. Yürütme tek başına savaş ilan edemez.',y:[]},
+  m48:{no:'Madde 48',b:'Yargı Yetkisi',k:'yargi',m:'Yargı yetkisi, Türk Milleti adına <strong>bağımsız ve tarafsız mahkemelerce</strong> kullanılır. Mahkemelere emir ve talimat verilemez.',a:'Yargı bağımsızlığının temeli. Hiçbir bakan, cumhurbaşkanı ya da general hakime "şu kararı ver" diyemez.',y:[]},
+  m49:{no:'Madde 49',b:'Yargı Bağımsızlığı ve Tarafsızlığı',k:'yargi',m:'Hâkimler ve savcılar görevlerinde <strong>bağımsızdır</strong>. Yargı bağımsızlığına yönelik her türlü müdahale yasa dışıdır.',a:'Bağımsızlık ilkesi teorik değil — ihlali suç. Hakimler vicdani kanaatlerine göre karar verir.',y:[]},
+  m50:{no:'Madde 50',b:'Hâkimlik ve Savcılık Teminatı',k:'yargi',m:'Hâkimler ve savcılar <strong>azlolunamaz</strong>, kendi istekleri dışında emekliye ayrılamaz, özlük haklarından mahrum edilemez.',a:'Hakim güvencesi olmadan yargı bağımsızlığı olmaz. Siyasi baskıyla hakim görevden alınamıyor.',y:[]},
+  m51:{no:'Madde 51',b:'Hakimler Kurulu',k:'yargi',m:'Hakimler Kurulu, hakimlerin atama ve terfi kararlarını denetleyen <strong>bağımsız bir organdır</strong>. Üyeleri TBMM tarafından 2/3 çoğunlukla seçilir.',a:'HSYK\'nın bağımsız versiyonu. Yürütmeden bağımsız yapı. 2/3 çoğunluk şartı uzlaşıyı zorunlu kılıyor.',y:[]},
+  m52:{no:'Madde 52',b:'Savcılar Kurulu',k:'yargi',m:'Savcılar Kurulu, savcıların özlük işlerini denetleyen bağımsız bir organdır. <strong>Hakimler Kurulu\'ndan ayrı tutulmuştur.</strong>',a:'Hakim ve savcı atamalarının farklı kurullara bağlanması, denge açısından olumlu bir tercih.',y:[]},
+  m53:{no:'Madde 53',b:'Yüksek Mahkemeler',k:'yargi',m:'Yüksek Mahkemeler; <strong>Anayasa Mahkemesi, Yargıtay, Danıştay</strong> ve Uyuşmazlık Mahkemesi\'dir.',a:'Yargı sisteminin yapısı. Anayasa Mahkemesi üst sırada, yasa denetimi onun görevi.',y:[]},
+  m54:{no:'Madde 54',b:'Anayasa Mahkemesi',k:'yargi',m:'Anayasa Mahkemesi <strong>15 üyeden</strong> oluşur. 5\'i Meclis, 5\'i Cumhurbaşkanı, 5\'i yargı tarafından seçilir. Görev süresi <strong>12 yıl, yeniden seçilme yok.</strong>',a:'Üç farklı kaynaktan seçilen 15 üye denge sağlamayı amaçlıyor. 12 yıllık süre ve yeniden seçilememe siyasi bağımsızlığı güçlendiriyor.',y:[{i:'Nazlı B.',s:'İstanbul',o:'ol',t:'Yeniden seçilememek kritik. Siyasete borçlu olmayan hakimler ancak bağımsız karar verir.'}]},
+  m55:{no:'Madde 55',b:'Yargıtay',k:'yargi',m:'Yargıtay, adli yargı mercilerince verilen karar ve hükümlerin <strong>son inceleme merciidir</strong>.',a:'Ülkenin en yüksek adli mahkemesi. Mahkûmiyet kararının yanlış olduğunu düşünüyorsan Yargıtay\'a taşıyabilirsin.',y:[]},
+  m56:{no:'Madde 56',b:'Danıştay',k:'yargi',m:'Danıştay, <strong>idari davaları</strong> görmekle görevlidir. Hükümetçe gönderilen kanun tasarıları hakkında görüş bildirir.',a:'Devletle vatandaşın davası idare mahkemelerinde başlar, en üstte Danıştay\'da sonuçlanır.',y:[]},
+  m57:{no:'Madde 57',b:'Uyuşmazlık Mahkemesi',k:'yargi',m:'Uyuşmazlık Mahkemesi, adli ve idari yargı mercileri arasındaki <strong>görev uyuşmazlıklarını</strong> kesin olarak çözümler.',a:'"Bu dava adli mi, idari mi?" sorusunun cevabını bu mahkeme veriyor.',y:[]},
+  m58:{no:'Madde 58',b:'Yargının Şeffaflığı',k:'yargi',m:'Duruşmalar aleni yapılır. <strong>Yargı kararları gerekçeleriyle kamuoyuna açıkça yayımlanır.</strong> Yıllık istatistikler paylaşılır.',a:'Kapalı kapılar ardında yargılama yok. Kararlar neden verildiğini açıklamak zorunda.',y:[]},
+  m59:{no:'Madde 59',b:'Yargı Mensuplarının Mal Beyanı',k:'yargi',m:'Hâkimler ve savcılar <strong>mal varlıklarını düzenli olarak beyan etmekle yükümlüdür</strong>. Beyanlar bağımsız kurum tarafından denetlenir.',a:'Yargıdaki yolsuzlukla mücadele. Hakim ne kadar servete sahip — herkes görebilsin.',y:[]},
+  m60:{no:'Madde 60',b:'Yargı Etiği Kurulu',k:'yargi',m:'Yargı Etiği Kurulu, yargı mensuplarının <strong>etik davranış ilkelerine uyumunu denetler</strong>. Hem yargı içinden hem dışından üyeler var.',a:'Hakim yolsuzluk veya etik ihlali yaparsa soruşturacak bağımsız kurul.',y:[]},
+  m61:{no:'Madde 61',b:'Karma Jüri Sistemi',k:'yargi',m:'Ağır ceza davalarında <strong>karma jüri sistemi</strong> uygulanır. Jüri ve profesyonel hakimler birlikte görev yapar.',a:'Türkiye\'de ilk kez anayasal jüri düzenlemesi. Ağır suçlarda vatandaş katılımı. Almanya ve Fransa\'da benzer karma sistemler var.',y:[]},
+  m62:{no:'Madde 62',b:'Vatandaşlık Esasları',k:'diger',m:'Türkiye Cumhuriyeti vatandaşlığı doğum, soy bağı veya kanunla kazanılır. <strong>"Türk" kavramı ortak yurttaşlık kimliğini</strong> ifade eder; ırk veya dil temelinde tanımlanamaz.',a:'Etnik değil yurttaşlık temelli kimlik anlayışı. Bu Anayasa ile "Türk" etnik kimlik değil, ortak vatandaşlık anlamına geliyor.',y:[]},
+  m63:{no:'Madde 63',b:'Vatandaşlık Kazanımı ve Yükümlülükleri',k:'diger',m:'Yıllık vatandaşlık kazanma oranı <strong>toplam nüfusun %0,3\'ünü aşamaz</strong>. Vatandaşlar oy hakkı, vergi ve askerlik yükümlülüklerine sahiptir.',a:'Vatandaşlık kotası tartışmalı. Hem haklar (oy, kamu hizmetleri) hem ödevler (vergi, askerlik) bu maddede.',y:[]},
+  m64:{no:'Madde 64',b:'Kültür, Dil ve Sanat',k:'diger',m:'Devlet kültürel mirası korumakla yükümlüdür. <strong>Azınlık kültürlerine ve geleneklerine saygı</strong> gösterilir. Çok dilli eğitim desteklenebilir.',a:'Kültürel çeşitlilik zenginlik olarak tanınıyor. Çok dilli eğitimin anayasal zemine oturtulması önemli.',y:[]},
+  m65:{no:'Madde 65',b:'Yurt Dışındaki Vatandaşlar',k:'diger',m:'Yurt dışındaki vatandaşların oy kullanma hakları güvence altındadır. <strong>En az 8 milletvekili kontenjanı</strong> ayrılabilir.',a:'Diaspora temsilciliği. Yurt dışında yaşayan milyonlarca vatandaşın Meclis\'te temsil edilmesi.',y:[]},
+  m66:{no:'Madde 66',b:'Kültür ve Eğitim İlişkisi',k:'diger',m:'Kültürel değerler, çevre bilinci ve vatandaşlık sorumlulukları <strong>eğitim müfredatının temel unsurlarından</strong> biridir.',a:'Okulda sadece test değil, yurttaşlık bilinci ve çevre eğitimi de zorunlu olacak.',y:[]},
+  m67:{no:'Madde 67',b:'Bağımsız Denetim Kurumları — Genel Esaslar',k:'denetim',m:'Bağımsız denetim kurumları <strong>yürütme, yasama veya yargıdan talimat alamaz.</strong> Üyeleri TBMM tarafından 2/3 çoğunlukla, 7 yıl için seçilir.',a:'Tüm bağımsız kurumların ortak ilkesi. 7 yıl görev, yeniden seçilememe siyasi bağımsızlığı güvence altına alıyor.',y:[]},
+  m68:{no:'Madde 68',b:'Sayıştay',k:'denetim',m:'Sayıştay, kamu gelir ve giderlerini denetler. <strong>Sayıştay raporları dijital platformlarda anlık erişilebilir formatta kamuya açıklanır.</strong>',a:'Devlet parasını kimin nasıl harcadığı anlık takip edilebilir. Sayıştay\'ın raporları siyasi değil teknik denetim sonucu.',y:[]},
+  m69:{no:'Madde 69',b:'Bağımsız Seçim Kurulu',k:'denetim',m:'Bağımsız Seçim Kurulu seçimlerin adil yürütülmesini sağlar. Kampanya finansmanını denetler; <strong>özel bağışlar harcamaların %20\'siyle sınırlıdır.</strong>',a:'YSK\'nın bağımsız versiyonu. Seçim kampanyaları büyük ölçüde devlet fonuyla, az miktarda özel bağışla finanse edilecek.',y:[]},
+  m70:{no:'Madde 70',b:'Çevre ve Doğa Koruma Kurulu',k:'denetim',m:'Çevre ve Doğa Koruma Kurulu, çevre politikalarını bağımsız denetler. Üyeleri <strong>çevre uzmanları ve bilim insanlarından</strong> oluşur.',a:'Çevresel kararlar siyasi değil bilimsel temele oturtulacak. Bağımsız kurul çevre mevzuatına uyumu denetleyecek.',y:[]},
+  m71:{no:'Madde 71',b:'Milletvekili Performans İzleme Kurulu',k:'denetim',m:'Bu kurul, milletvekillerinin <strong>meclis katılımı, kanun teklifleri ve seçmenle ilişkilerini</strong> şeffaf kriterlere göre izler ve kamuoyuna raporlar.',a:'Dünyada nadir görülen bir düzenleme. Vatandaş kendi vekilinin ne kadar çalıştığını takip edebilecek.',y:[]},
+  m72:{no:'Madde 72',b:'Siyasi Partiler',k:'parti',m:'Siyasi partiler, demokratik siyasi hayatın <strong>vazgeçilmez unsurlarıdır</strong>. Parti içi demokrasi esastır.',a:'Partiler demokratik sistemin olmazsa olmazı ama bu haklar sınırsız değil — iç demokrasi zorunlu.',y:[]},
+  m73:{no:'Madde 73',b:'Parti İçi Demokrasi ve Liderlik Dönem Sınırı',k:'parti',m:'Partiler adaylarını <strong>ön seçimle</strong> belirlemek zorundadır. Parti genel başkanları <strong>en fazla 2 dönem (4\'er yıl)</strong> seçilebilir.',a:'Parti lideri için dönem sınırı anayasal bir yenilik. Liderliğin kişiselleşmesinin önüne geçmek amaçlanıyor. Tartışmalı bir hüküm.',y:[]},
+  m74:{no:'Madde 74',b:'Parti Finansmanı Şeffaflığı',k:'parti',m:'Parti gelir ve giderleri Sayıştay denetimine tabidir. <strong>Yabancı devletlerden ve anonim kaynaklardan bağış alınamaz.</strong>',a:'Siyasi partilerin kimin parasıyla çalıştığı herkes tarafından bilinecek. Yabancı müdahale yasak.',y:[]},
+  m75:{no:'Madde 75',b:'Parti Kapatma',k:'parti',m:'Partiler <strong>ancak şiddet eylemlerine açıkça teşvik</strong> eden nedenlerle Anayasa Mahkemesi kararıyla kapatılabilir.',a:'Parti kapatmanın çıtası çok yüksek tutuluyor. Düşünce veya söylem nedeniyle kapatma artık anayasal değil.',y:[]},
+  m76:{no:'Madde 76',b:'Yerel Yönetimler ve Belediye Başkanlığı',k:'yerel',m:'Yerel yönetimler idari ve mali özerkliğe sahiptir. <strong>Belediye başkanları siyasi partiye üye olamaz</strong> ve bağımsız olarak aday olur.',a:'Belediye başkanlarının partisiz olma zorunluluğu tartışmalı. Yerel yönetimler merkeze karşı özerk.',y:[]},
+  m77:{no:'Madde 77',b:'Merkezi İdare Denetimi',k:'yerel',m:'Merkezi idare, yerel yönetimler üzerinde <strong>sadece hukuka uygunluk</strong> amacıyla vesayet yetkisi kullanabilir.',a:'Hükümet yerel seçilmişlere "bu kararı alma" diyemez — sadece yasadışılık için müdahale edebilir.',y:[]},
+  m78:{no:'Madde 78',b:'Kamu Hizmetleri',k:'yerel',m:'Kamu hizmetleri şeffaflık ve verimlilik ilkeleriyle yürütülür. Kamu görevlileri <strong>siyasi partilerle ilişkilerinde tarafsız</strong> olmak zorundadır.',a:'Devlet memuru partizan faaliyette bulunamaz. Bu ilke kamu kurumlarının tarafsızlığını güvence altına alıyor.',y:[]},
+  m79:{no:'Madde 79',b:'Acil Durum Yönetimi',k:'yerel',m:'Doğal afet, salgın veya siber saldırı gibi krizlerde yönetim merkezi koordinasyonla yürütülür. Acil durum kısıtlamaları <strong>derhal Meclis onayına sunulur.</strong>',a:'Pandemi deneyiminden ders çıkarılıyor. Kriz kararları Meclis denetiminde. Çekirdek haklara yine de dokunulamıyor.',y:[]},
+  m80:{no:'Madde 80',b:'Ekonomik Düzenin Esasları',k:'ekonomi',m:'Türkiye ekonomisi; <strong>insan onurunu, sosyal adaleti, çevreye duyarlılığı</strong> ve sürdürülebilir kalkınmayı esas alır. Devlet tekelleşmeyi önler.',a:'Serbest piyasa esas ama sosyal adalet ve çevre kaygısı da anayasal. Tekel ve haksız rekabet devlet tarafından engellenir.',y:[]},
+  m81:{no:'Madde 81',b:'Bütçede Eğitim ve Sağlık Önceliği',k:'ekonomi',m:'Eğitim ve sağlık, <strong>olağanüstü haller dışında bütçeden en yüksek iki payı alır</strong>. Bütçe hazırlanırken çevresel ve sosyal etki değerlendirmesi zorunludur.',a:'Yenilikçi bir hüküm: eğitim ve sağlık bütçenin önceliği. Bu sıralamayı hiçbir hükümet değiştiremez.',y:[]},
+  m82:{no:'Madde 82',b:'Vergi Adaleti ve Şeffaflık',k:'ekonomi',m:'Vergi yükü mali güce göre adil dağıtılır. <strong>Karbon salınımı ve çevre kirliliği vergilendirilir.</strong> Kamu gelirleri kamuya düzenli raporlanır.',a:'Karbon vergisi anayasal zemine oturuyor. Zengin daha fazla, yoksul daha az vergi öder ilkesi güvence altında.',y:[]},
+  m83:{no:'Madde 83',b:'Sosyal Devlet ve Asgari Gelir Güvencesi',k:'ekonomi',m:'<strong>Asgari gelir güvencesi</strong> ve temel sosyal yardım programları anayasal güvence altındadır. Sosyal güvenlik sistemi kapsayıcıdır.',a:'Devlet, hiçbir yurttaşın belirli bir gelirin altında kalmamasını güvence altına alıyor. Finlandiya\'nın evrensel temel gelir deneyleriyle örtüşüyor.',y:[{i:'Cemre K.',s:'İzmir',o:'ol',t:'Yoksulluk kader değil. Devletin görevi budur.'},{i:'Tayfun S.',s:'Kayseri',o:'tar',t:'Bütçe nasıl karşılanacak? Somut olmadan havada kalır.'}]},
+  m84:{no:'Madde 84',b:'Doğal Kaynaklar ve Tarım Arazilerinin Korunması',k:'ekonomi',m:'Doğal kaynaklar kamu yararı gözetilerek yönetilir. <strong>Tarım arazileri ve su kaynakları stratejik öneme sahiptir.</strong> Madencilik tarımsal verimliliği tehdit edemez.',a:'"Toprağın üstü altından kıymetlidir" ilkesi anayasaya giriyor. Maden çıkarmak tarımı tehdit edemez.',y:[]},
+  m85:{no:'Madde 85',b:'Kamu Borçlanması ve Mali Disiplin',k:'ekonomi',m:'Kamu borçlanması <strong>gelecek nesillerin yükünü artırmama</strong> ilkesiyle sınırlandırılır. Borç stoku düzenli olarak kamuya açıklanır.',a:'Borçlanmanın anayasal sınırı. Devlet gelecek nesillere borç yükü bırakmamalı ilkesi.',y:[]},
+  m86:{no:'Madde 86',b:'Bağımsız Mali Denetim',k:'ekonomi',m:'Sayıştay ve diğer denetim kurumları yürütme ve yasamadan bağımsızdır. Denetim raporları <strong>TBMM\'de görüşülür ve kamuya açık olur.</strong>',a:'Mali denetim siyasetten bağımsız. Bulgular Meclis\'te tartışılıyor, kamuoyuna açıklanıyor.',y:[]},
+  m87:{no:'Madde 87',b:'Anayasanın Ruhu ve Bağlayıcılığı',k:'diger',m:'Anayasanın değiştirilemez temel ilkeleri: <strong>insan onuru, özgürlüklerin geniş yorumu, laiklik, çevreye saygı</strong> ve hesap verebilirlik.',a:'Anayasanın bütününe anlam veren ilkeler. Mahkemeler bu ilkelere göre yorumlama yapar. "Anayasanın ruhu" kavramı.',y:[]},
+  m88:{no:'Madde 88',b:'Anayasanın Üstünlüğü',k:'diger',m:'Anayasa hükümleri yasama, yürütme, yargı ve tüm kişileri bağlar. <strong>Anayasaya aykırı kanunlar hükümsüzdür.</strong>',a:'Anayasa en üst hukuk normu. Hiçbir kanun, kararname veya yönetmelik ona aykırı olamaz.',y:[]},
+  m89:{no:'Madde 89',b:'Anayasa Değişikliği Usulü',k:'diger',m:'Değişiklik teklifleri Anayasa Mahkemesi ön denetimine tabi. Meclis\'te <strong>3/5 çoğunluk</strong>, ardından <strong>zorunlu referandum</strong> ile kabul edilir.',a:'Anayasa değiştirmenin zorlaştırılmış prosedürü. AYM ruhla çelişen teklifleri reddedebilir — bu yetki tartışmalı.',y:[]},
+  m90:{no:'Madde 90',b:'Kamu İstişaresi',k:'diger',m:'Anayasa değişiklik teklifleri <strong>en az 90 gün</strong> kamu istişaresine açılır. Sivil toplum ve vatandaşlar yazılı görüş bildirebilir.',a:'İskandinav ülkelerindeki uygulamaya benzer. Anayasa değişmeden önce herkes fikir beyan edebilir.',y:[]},
+  m91:{no:'Madde 91',b:'Geçiş Süreci',k:'diger',m:'Anayasa yürürlüğe girdikten sonra <strong>en geç 2 yıl içinde</strong> gerekli tüm uyum yasaları çıkarılır.',a:'Yeni anayasaya geçiş takvimi. 2 yıl içinde eski mevzuat yenilenmeli.',y:[]},
+  m92:{no:'Madde 92',b:'Geçici Kurallar',k:'diger',m:'Mevcut Cumhurbaşkanı, TBMM ve yerel yönetimler görevlerine devam eder. <strong>Sonraki ilk genel seçimle yeni sistem</strong> uygulanmaya başlar.',a:'Mevcut görevliler işlerini sürdürüyor. Yeni sistem bir sonraki seçimle devreye giriyor.',y:[]},
+  m93:{no:'Madde 93',b:'Uluslararası Yükümlülükler',k:'diger',m:'Türkiye\'nin taraf olduğu uluslararası anlaşmalar geçerliliğini korur. Anayasa değişiklikleri <strong>uluslararası insan hakları sözleşmeleriyle çelişemez.</strong>',a:'AİHM ve BM sözleşmelerindeki haklar korunmaya devam ediyor.',y:[]},
+  m94:{no:'Madde 94',b:'Anayasanın Yürürlüğe Girişi',k:'diger',m:'Bu Anayasa, <strong>halkoylamasında kabul edilip Resmî Gazete\'de yayımlandığı tarihte yürürlüğe girer</strong>. 1982 Anayasası yürürlükten kalkar.',a:'1982 Anayasası tarih oluyor, bu metin başlıyor. Referandum zorunlu.',y:[]},
+  m95:{no:'Madde 95',b:'Kurucu Hüküm',k:'diger',m:'Bu Anayasa, <strong>Türk Milleti\'nin hür iradesiyle</strong> kabul ettiği kurucu belgedir. Tüm kamu kurumları ve görevlileri bu Anayasa\'ya sadakatle bağlıdır.',a:'Son madde — devletin kuruluş belgesi. Bu cümle meşruiyetin kaynağını tanımlıyor.',y:[]},
+};
+
+const KL={'genel':'1. Kısım — Genel Esaslar','haklar':'2. Kısım — Temel Haklar ve Özgürlükler','yasama':'3. Kısım — Yasama','yurutme':'3. Kısım — Yürütme','yargi':'3. Kısım — Yargı','denetim':'5. Kısım — Bağımsız Denetim Kurumları','parti':'6. Kısım — Siyasi Partiler','yerel':'7. Kısım — Yerel Yönetimler','ekonomi':'8. Kısım — Ekonomi ve Mali Düzen','diger':'Diğer Hükümler'};
+const yD={};
+Object.keys(M).forEach(k=>{yD[k]=[...M[k].y];});
+let aktif=null,secOy=null;
+
+function gridOlustur(kisim){
+  const grid=document.getElementById('grid');
+  grid.innerHTML='';
+  let mk=null;
+  const liste=Object.entries(M).filter(([k,v])=>!kisim||v.k===kisim).sort((a,b)=>parseInt(a[0].slice(1))-parseInt(b[0].slice(1)));
+  liste.forEach(([id,m])=>{
+    if(!kisim&&m.k!==mk){
+      mk=m.k;
+      const s=document.createElement('div');
+      s.className='kisim-sep';
+      s.innerHTML=`<span>${KL[m.k]||''}</span><span></span>`;
+      grid.appendChild(s);
+    }
+    const n=yD[id]?yD[id].length:0;
+    const d=document.createElement('div');
+    d.className='kart';
+    d.innerHTML=`<div class="kt">${m.no}</div><h3>${m.b}</h3><p>${m.a.length>95?m.a.slice(0,95)+'…':m.a}</p><div class="ka"><span class="ky"><span class="dot"></span>${n} yorum</span><span class="ko">→</span></div>`;
+    d.onclick=()=>modalAc(id);
+    grid.appendChild(d);
+  });
+}
+let aktifKisim='';
+function filtrele(k,btn){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('aktif'));btn.classList.add('aktif');aktifKisim=k;gridOlustur(k);}
+function modalAc(id){
+  const m=M[id];if(!m)return;
+  aktif=id;secOy=null;
+  ['ol','olm','tar'].forEach(t=>document.getElementById('oy-'+t).className='ob');
+  document.getElementById('y-met').value='';document.getElementById('y-isim').value='';document.getElementById('y-sehir').value='';
+  document.getElementById('m-no').textContent=m.no;document.getElementById('m-bas').textContent=m.b;
+  document.getElementById('m-met').innerHTML=m.m;document.getElementById('m-ac').innerHTML='<strong>💡 Sade Açıklama</strong>'+m.a;
+  yGoster(id);document.getElementById('ov').classList.add('ac');document.body.style.overflow='hidden';
+}
+function ovK(e){if(e&&e.target!==document.getElementById('ov'))return;document.getElementById('ov').classList.remove('ac');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('ov').classList.remove('ac');document.body.style.overflow='';}});
+function yGoster(id){
+  const l=document.getElementById('y-liste'),y=yD[id]||[];
+  if(!y.length){l.innerHTML='<p style="color:var(--gri);font-size:13px;padding:8px 0">Henüz yorum yok. İlk yorumu sen yaz!</p>';return;}
+  l.innerHTML=y.map((r,idx)=>{
+    const yid=r.db_id||('local-'+idx);
+    const beg=r.begeniler||0;
+    const begm=r.begenmemeler||0;
+    const altY=r.alt_yorumlar||[];
+    return `<div class="yi" data-yid="${yid}">
+      <div class="yim"><div class="yav">${r.i[0]}</div><span class="yin">${r.i}</span><span class="yis">${r.s}</span><span class="badge ${r.o==='ol'?'bo':r.o==='olm'?'bom':'bt'}">${r.o==='ol'?'✓ Katılıyor':r.o==='olm'?'✗ Katılmıyor':'◎ Kararsız'}</span></div>
+      <div class="yit">${r.t}</div>
+      <div class="y-aksiyonlar">
+        <button class="y-btn begeni-btn" onclick="begeniVer('${yid}','begeni',this)">👍 <span class="beg-sayi">${beg}</span></button>
+        <button class="y-btn begeni-btn" onclick="begeniVer('${yid}','begenmeme',this)">👎 <span class="beg-sayi">${begm}</span></button>
+        <button class="y-btn yanit-btn" onclick="yanitAc('${yid}',this)">💬 Yanıtla</button>
+      </div>
+      <div class="yanit-form" id="yf-${yid}" style="display:none">
+        <input class="yanit-input" placeholder="Adın" id="yi-isim-${yid}">
+        <textarea class="yanit-ta" placeholder="Yanıtını yaz..." id="yi-met-${yid}"></textarea>
+        <button class="y-btn" onclick="yanitGonder('${yid}')">Gönder</button>
+      </div>
+      ${altY.length?`<div class="alt-yorumlar">${altY.map(a=>`<div class="alt-yorum"><div class="yav" style="width:24px;height:24px;font-size:10px">${(a.isim||a.i||'A')[0]}</div><div><span class="yin" style="font-size:12px">${a.isim||a.i}</span><span class="yis">${a.sehir||a.s||''}</span><div class="yit" style="font-size:13px">${a.metin||a.t}</div></div></div>`).join('')}</div>`:''}
+    </div>`;
+  }).join('');
+}
+async function begeniVer(yid,tip,btn){
+  if(yid.startsWith('local-')){alert('Yorum henüz kaydedilmedi.');return;}
+  if(btn.classList.contains('aktif-begen'))return;
+  btn.classList.add('aktif-begen');
+  const sayi=btn.querySelector('.beg-sayi');
+  sayi.textContent=parseInt(sayi.textContent)+1;
+  if(window._sb){
+    await window._sb.from('yorum_begeniler').insert({yorum_id:yid,tip});
+  }
+}
+function yanitAc(yid,btn){
+  const f=document.getElementById('yf-'+yid);
+  f.style.display=f.style.display==='none'?'block':'none';
+}
+async function yanitGonder(yid){
+  const isim=document.getElementById('yi-isim-'+yid).value.trim()||'Anonim';
+  const metin=document.getElementById('yi-met-'+yid).value.trim();
+  if(!metin){alert('Yanıt boş olamaz!');return;}
+  if(window._sb){
+    const {error}=await window._sb.from('alt_yorumlar').insert({yorum_id:yid,isim,metin,durum:'onaylandi'});
+    if(error){console.warn(error);return;}
+  }
+  // UI'a ekle
+  const altDiv=document.querySelector(`[data-yid="${yid}"] .alt-yorumlar`);
+  const yeniAlt=`<div class="alt-yorum"><div class="yav" style="width:24px;height:24px;font-size:10px">${isim[0]}</div><div><span class="yin" style="font-size:12px">${isim}</span><div class="yit" style="font-size:13px">${metin}</div></div></div>`;
+  if(altDiv){altDiv.innerHTML+=yeniAlt;}
+  else{document.querySelector(`[data-yid="${yid}"]`).insertAdjacentHTML('beforeend',`<div class="alt-yorumlar">${yeniAlt}</div>`);}
+  document.getElementById('yf-'+yid).style.display='none';
+}
+function oyVer(t){secOy=t;const c={ol:'s1',olm:'s2',tar:'s3'};['ol','olm','tar'].forEach(x=>document.getElementById('oy-'+x).className='ob'+(x===t?' '+c[x]:''));}
+async function gonder(){
+  if(!secOy){alert('Lütfen önce oyunu kullan!');return;}
+  const met=document.getElementById('y-met').value.trim();
+  const isim=document.getElementById('y-isim').value.trim()||'Anonim Yurttaş';
+  const sehir=document.getElementById('y-sehir').value||'Türkiye';
+  if(met.length>0&&met.length<10){alert('Biraz daha açıklar mısın? En az 10 karakter.');return;}
+  const gb=document.querySelector('.gb');
+  gb.textContent='Gönderiliyor…';gb.disabled=true;
+  try {
+    if(window._sb){
+      const {error}=await window._sb.from('yorumlar').insert({
+        madde_id:aktif,madde_no:M[aktif].no,madde_baslik:M[aktif].b,
+        isim,sehir,oy:secOy,
+        metin:met||(secOy==='ol'?'Bu maddeyi destekliyorum.':secOy==='olm'?'Bu maddeyle aynı fikirde değilim.':'Henüz karar vermedim.'),
+        durum:'onaylandi'
+      });
+      if(error)throw error;
+    }
+  } catch(e){console.warn('Supabase hata:',e.message);}
+  yD[aktif].unshift({i:isim,s:sehir,o:secOy,t:met||(secOy==='ol'?'Bu maddeyi destekliyorum.':secOy==='olm'?'Bu maddeyle aynı fikirde değilim.':'Henüz karar vermedim.')});
+  yGoster(aktif);
+  document.getElementById('y-met').value='';document.getElementById('y-isim').value='';secOy=null;
+  ['ol','olm','tar'].forEach(t=>document.getElementById('oy-'+t).className='ob');
+  gb.textContent='Görüşümü Paylaş →';gb.disabled=false;
+  const b=document.getElementById('bil');b.classList.add('goster');setTimeout(()=>b.classList.remove('goster'),3200);
+  gridOlustur(aktifKisim);
+}
+function sayac(id,h,s){const el=document.getElementById(id);let c=0;const a=h/(s/16);const t=setInterval(()=>{c=Math.min(c+a,h);el.textContent=Math.floor(c).toLocaleString('tr-TR');if(c>=h)clearInterval(t);},16);}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){sayac('s1',2847,1800);sayac('s2',8312,2200);sayac('s3',95,1400);sayac('s4',67,1600);obs.disconnect();}});},{threshold:.3});
+// Sayaçlar Supabase'den gerçek veriyle dolacak
+// obs.observe(document.querySelector('.sb'));
+gridOlustur('');
+</script>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const sb = createClient(
+  'https://cgvmmlrlrjqrafcotaxf.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNndm1tbHJscmpxcmFmY290YXhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4MTEyNDgsImV4cCI6MjA4ODM4NzI0OH0.wa5Gi03AJjKrCTvf1UDJhUVsw7Vo5mVz1G5EZKS26wI'
+);
+window._sb = sb;
+// Onaylı yorumları yükle
+try {
+  const {data,error}=await sb.from('yorumlar').select('*').neq('durum','silindi').order('olusturma_tarihi',{ascending:false});
+  if(!error&&data){
+    // Beğenileri ve alt yorumları da çek
+    const yorumIds = data.map(y=>y.id);
+    let begenilerMap={}, altYorumlarMap={};
+    if(yorumIds.length){
+      const {data:bd}=await sb.from('yorum_begeniler').select('yorum_id,tip').in('yorum_id',yorumIds);
+      if(bd)bd.forEach(b=>{
+        if(!begenilerMap[b.yorum_id])begenilerMap[b.yorum_id]={begeni:0,begenmeme:0};
+        begenilerMap[b.yorum_id][b.tip]++;
+      });
+      const {data:ad}=await sb.from('alt_yorumlar').select('*').in('yorum_id',yorumIds).eq('durum','onaylandi');
+      if(ad)ad.forEach(a=>{
+        if(!altYorumlarMap[a.yorum_id])altYorumlarMap[a.yorum_id]=[];
+        altYorumlarMap[a.yorum_id].push(a);
+      });
+    }
+    data.forEach(y=>{
+      if(!window.yD[y.madde_id])window.yD[y.madde_id]=[];
+      if(!window.yD[y.madde_id].find(x=>x.db_id===y.id))
+        window.yD[y.madde_id].push({
+          i:y.isim,s:y.sehir||'',o:y.oy,t:y.metin||'',db_id:y.id,
+          begeniler:begenilerMap[y.id]?.begeni||0,
+          begenmemeler:begenilerMap[y.id]?.begenmeme||0,
+          alt_yorumlar:altYorumlarMap[y.id]||[]
+        });
+    });
+    document.getElementById('s2').textContent=data.length.toLocaleString('tr-TR');
+    document.getElementById('s3').textContent='95';
+    const uniqIsim=new Set(data.map(y=>y.isim).filter(Boolean)).size;
+    document.getElementById('s1').textContent=uniqIsim.toLocaleString('tr-TR');
+    const uniqSehir=new Set(data.map(y=>y.sehir).filter(Boolean)).size;
+    document.getElementById('s4').textContent=uniqSehir||0;
+    console.log('✓ Supabase bağlandı,',data.length,'onaylı yorum yüklendi');
+  }
+} catch(e){console.warn('Supabase bağlanamadı:',e.message);}
+</script>
+</body>
+</html>
